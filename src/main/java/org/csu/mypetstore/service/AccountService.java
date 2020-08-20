@@ -17,8 +17,6 @@ public class AccountService {
     @Autowired
     AccountMapper accountMapper;
 
-
-
     public Account getAccount(String username) {
         Account account = accountMapper.getAccountByUsername(username);
         if(accountMapper.getAccountByUsername(username) == null){
@@ -26,7 +24,6 @@ public class AccountService {
         }
         return accountMapper.getAccountByUsername(username);
     }
-
 
     public Account getAccount(String username, String password) {
         Account account = new Account();
@@ -37,12 +34,9 @@ public class AccountService {
         return accountMapper.getAccountByUsernameAndPassword(account);
     }
 
-
     public void insertAccount(Account account) {
         accountMapper.insertSignon(account);
     }
-
-
 
     public void updateAccount(Account account) {
         accountMapper.updateAccount(account);
@@ -53,7 +47,7 @@ public class AccountService {
         }
     }
 
-        public String sendMsg(String phoneNumber) throws  ClientException {
+    public String sendMsg(String phoneNumber) throws  ClientException {
 
             String randomNum = "";
             int num=6;
@@ -89,9 +83,7 @@ public class AccountService {
                 }
                 return null;
             }
-
         }
-
 
     public Account getAccountByPhoneNumber(String phoneNumber) {
         Account account = new Account();

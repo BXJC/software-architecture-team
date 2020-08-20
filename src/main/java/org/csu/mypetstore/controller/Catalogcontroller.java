@@ -31,13 +31,6 @@ public class Catalogcontroller {
 
     @GetMapping("/view")
     public String view(Model model, HttpSession session, HttpServletResponse response){
-
-        Cookie cookie=new Cookie("sessionId",session.getId ());
-        System.out.println ("sessionId:"+session.getId());
-        cookie.setPath ("/");
-        cookie.setMaxAge(7 * 24 * 60 * 60);
-
-        response.addCookie(cookie);
         model.addAttribute("account",null);
         return "catalog/main";
     }
